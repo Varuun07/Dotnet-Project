@@ -2,7 +2,11 @@ trigger:
 - master
 
 pool:
+  name: Azure Pipelines
   vmImage: windows-latest
+  demands:
+  - msbuild
+  - visualstudio
 
 steps:
 - task: NuGetToolInstaller@0
@@ -19,9 +23,7 @@ steps:
   displayName: 'Build solution'
   inputs:
     solution: '$(Parameters.solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
-    platform: '$(BuildPlatform)'
-    configuration: '$(BuildConfiguration)'
+    
 
 - task: VSTest@2
   displayName: 'Test Assemblies'
