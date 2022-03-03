@@ -11,12 +11,12 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '**/New%20project.csproj'
+    projects: '**/New-dotnet-project?path=/New%20project.csproj'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    projects: '**/New%20project.csproj'
+    projects: '**/New-dotnet-project?path=/New%20project.csproj'
     
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
