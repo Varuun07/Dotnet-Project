@@ -17,6 +17,7 @@ steps:
   inputs:
     command: 'test'
     projects: '**/New%20project.csproj'
+    
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
   inputs:
