@@ -9,6 +9,9 @@ pool:
   - visualstudio
 
 steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
 - task: NuGetToolInstaller@0
   displayName: 'Use NuGet 4.4.1'
   inputs:
