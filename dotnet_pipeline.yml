@@ -28,7 +28,7 @@ steps:
     command: 'test'
     projects: '**/*.csproj'
 
-- task: NuGetRestore@1
+- task: NuGet@2
   inputs:
     command: 'restore'
     restoreSolution: '**/*.sln'
