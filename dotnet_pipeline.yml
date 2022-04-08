@@ -34,10 +34,6 @@ steps:
     restoreSolution: '**/*.sln'
     feedsToUse: 'config'
 
-- task: NuGetAuthenticate@0
-  inputs:
-    forceReinstallCredentialProvider: true
-
 - task: PublishSymbols@2
   displayName: 'Publish symbols path'
   inputs:
