@@ -28,12 +28,6 @@ steps:
     command: 'test'
     projects: '**/*.csproj'
 
-- task: NuGet@2
-  inputs:
-    command: 'restore'
-    restoreSolution: '**/*.sln'
-    feedsToUse: 'config'
-
 - task: PublishSymbols@2
   displayName: 'Publish symbols path'
   inputs:
