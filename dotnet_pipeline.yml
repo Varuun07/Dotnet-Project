@@ -23,12 +23,12 @@ steps:
   inputs:
     restoreSolution: '$(Parameters.solution)'
 
-- task: DotNetCoreCLI@2
+- task: PublishTestResults@1
   inputs:
     command: 'test'
     projects: '**/*.csproj'
 
-- task: NuGetCommand@2
+- task: NuGetRestore@1
   inputs:
     command: 'restore'
     restoreSolution: '**/*.sln'
