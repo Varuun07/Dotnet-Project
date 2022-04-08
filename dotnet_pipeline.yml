@@ -23,14 +23,20 @@ steps:
   inputs:
     restoreSolution: '$(Parameters.solution)'
 
-- task: VSTest@2
-  displayName: 'Test Assemblies'
+- task: DotNetCoreCLI@2
   inputs:
-    testAssemblyVer2: |
-     **\$(BuildConfiguration)\*test*.dll
-     !**\obj\**
-    platform: '$(BuildPlatform)'
-    configuration: '$(BuildConfiguration)'
+    command: 'test'
+    projects: '**/*.csproj'
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'config'
+
+- task: NuGetAuthenticate@0
+  inputs:
+    forceReinstallCredentialProvider: true
 
 - task: PublishSymbols@2
   displayName: 'Publish symbols path'
