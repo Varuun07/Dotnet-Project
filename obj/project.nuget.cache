@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3Eh2T6ajrJ9R6R+Kq30mtDV5wVQ8aPERGGzldYDlMvPNDrjXQE9+qarD9V+0TItVXdgkqjcMK6FkynzN6r6QjA==",
+  "dgSpecHash": "CRQ1LWR9UJyd0pJQt5Dv81og3G6mU2HwEsXafAOJKOAP2W+2jr9Vt+rhJ72edI3/OtJRQhZCI8R0eONZbtSJPA==",
   "success": true,
-  "projectFilePath": "D:\\Azure Resources\\DevOps\\New project\\New project.csproj",
+  "projectFilePath": "D:\\Azure DevOps Projects\\New-dotnet-project\\New-dotnet-project.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

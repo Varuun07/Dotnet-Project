@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Azure Resources\\DevOps\\New project\\New project.csproj": {}
+    "D:\\Azure DevOps Projects\\New-dotnet-project\\New-dotnet-project.csproj": {}
   },
   "projects": {
-    "D:\\Azure Resources\\DevOps\\New project\\New project.csproj": {
+    "D:\\Azure DevOps Projects\\New-dotnet-project\\New-dotnet-project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Azure Resources\\DevOps\\New project\\New project.csproj",
-        "projectName": "New project",
-        "projectPath": "D:\\Azure Resources\\DevOps\\New project\\New project.csproj",
+        "projectUniqueName": "D:\\Azure DevOps Projects\\New-dotnet-project\\New-dotnet-project.csproj",
+        "projectName": "New-dotnet-project",
+        "projectPath": "D:\\Azure DevOps Projects\\New-dotnet-project\\New-dotnet-project.csproj",
         "packagesPath": "C:\\Users\\varun.pujari\\.nuget\\packages\\",
-        "outputPath": "D:\\Azure Resources\\DevOps\\New project\\obj\\",
+        "outputPath": "D:\\Azure DevOps Projects\\New-dotnet-project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\varun.pujari\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -19,6 +19,9 @@
         "originalTargetFrameworks": [
           "net6.0"
         ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
@@ -52,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
