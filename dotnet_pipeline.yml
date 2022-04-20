@@ -19,11 +19,9 @@ steps:
   inputs:
     restoreSolution: '$(Parameters.solution)'
 
-- task: VSBuild@1
+- task: MSBuild@1
   inputs:
     solution: '**/*.sln'
-    vsVersion: 'latest'
-    msbuildArchitecture: 'x64'
 
 - task: SonarQubeAnalyze@5
 
