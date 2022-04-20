@@ -9,14 +9,21 @@ pool:
   - visualstudio
 
 steps:
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'sonar_dotnet'
+    scannerMode: 'MSBuild'
+    projectKey: 'Dotnet-Project_Dotnet-Project_AYBG60-r9_PAQzBXorl8'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
 
-- task: VSBuild@1
+- task: SonarQubeAnalyze@5
+
+- task: SonarQubePublish@5
   inputs:
-    solution: '**\*.sln'
-    platform: 'x64'
+    pollingTimeoutSec: '300'
 
 - task: NuGetToolInstaller@0
   displayName: 'Use NuGet 4.4.1'
