@@ -13,6 +13,11 @@ steps:
   inputs:
     command: 'build'
 
+- task: VSBuild@1
+  inputs:
+    solution: '**\*.sln'
+    platform: 'x64'
+
 - task: NuGetToolInstaller@0
   displayName: 'Use NuGet 4.4.1'
   inputs:
