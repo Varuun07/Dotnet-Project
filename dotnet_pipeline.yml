@@ -19,12 +19,6 @@ steps:
   inputs:
     restoreSolution: '$(Parameters.solution)'
 
-- task: SonarQubePrepare@5
-  inputs:
-    SonarQube: 'sonar_dotnet'
-    scannerMode: 'MSBuild'
-    projectKey: 'Dotnet-Project_Dotnet-Project_AYBG60-r9_PAQzBXorl8'
-
 - task: VSBuild@1
   inputs:
     solution: '**/*.sln'
