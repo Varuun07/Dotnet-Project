@@ -9,11 +9,33 @@ pool:
   - visualstudio
 
 steps:
+- task: NuGetToolInstaller@0
+  displayName: 'Use NuGet 4.4.1'
+  inputs:
+    versionSpec: 4.4.1
+
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
+  inputs:
+    restoreSolution: '$(Parameters.solution)'
+
 - task: SonarQubePrepare@5
   inputs:
     SonarQube: 'sonar_dotnet'
     scannerMode: 'MSBuild'
     projectKey: 'Dotnet-Project_Dotnet-Project_AYBG60-r9_PAQzBXorl8'
+
+- task: VSBuild@1
+  inputs:
+    solution: '**/*.sln'
+    vsVersion: 'latest'
+    msbuildArchitecture: 'x64'
+
+- task: SonarQubeAnalyze@5
+
+- task: SonarQubePublish@5
+  inputs:
+    pollingTimeoutSec: '300'
 
 - task: VSTest@2
   displayName: 'Test Assemblies'
@@ -27,22 +49,6 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-
-- task: SonarQubeAnalyze@5
-
-- task: SonarQubePublish@5
-  inputs:
-    pollingTimeoutSec: '300'
-
-- task: NuGetToolInstaller@0
-  displayName: 'Use NuGet 4.4.1'
-  inputs:
-    versionSpec: 4.4.1
-
-- task: NuGetCommand@2
-  displayName: 'NuGet restore'
-  inputs:
-    restoreSolution: '$(Parameters.solution)'
 
 - task: PublishTestResults@1
   inputs:
