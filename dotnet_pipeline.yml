@@ -1,13 +1,6 @@
 trigger:
 - master
 
-steps:
-- task: SonarQubePrepare@5
-  inputs:
-    SonarQube: 'sonar_dotnet'
-    scannerMode: 'MSBuild'
-    projectKey: 'Dotnet-Project_Dotnet-Project_AYBG60-r9_PAQzBXorl8'
-
 pool:
   name: Azure Pipelines
   vmImage: windows-latest
@@ -15,6 +8,7 @@ pool:
   - msbuild
   - visualstudio
 
+steps:
 - task: NuGetToolInstaller@0
   displayName: 'Use NuGet 4.4.1'
   inputs:
@@ -24,6 +18,12 @@ pool:
   displayName: 'NuGet restore'
   inputs:
     restoreSolution: '$(Parameters.solution)'
+
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'sonar_dotnet'
+    scannerMode: 'MSBuild'
+    projectKey: 'Dotnet-Project_Dotnet-Project_AYBG60-r9_PAQzBXorl8'
 
 - task: SonarQubeAnalyze@5
 
